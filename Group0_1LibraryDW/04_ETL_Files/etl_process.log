@@ -1,0 +1,92 @@
+2026-01-30 08:52:01,029 - INFO - ================================================================================
+2026-01-30 08:52:01,029 - INFO - Starting Full ETL Process (with NULL Handling)
+2026-01-30 08:52:01,029 - INFO - ================================================================================
+2026-01-30 08:52:01,077 - INFO - Database connections established successfully
+2026-01-30 08:52:01,078 - INFO - 
+--- EXTRACTION PHASE ---
+2026-01-30 08:52:01,078 - INFO - Extracting book transactions...
+2026-01-30 08:52:01,091 - INFO - NULL values in source data: {'TransactionID': 0, 'StudentID': 0, 'BookISBN': 0, 'CheckoutDate': 0, 'ReturnDate': 5, 'Department': 0, 'BookCategory': 0}
+2026-01-30 08:52:01,109 - INFO - Extracted 10 book transactions
+2026-01-30 08:52:01,109 - INFO - Extracting digital downloads...
+2026-01-30 08:52:02,173 - INFO - NULL values in digital downloads: {'Date': 0, 'UserType': 0, 'ResourceType': 0, 'Faculty': 0, 'DownloadCount': 0, 'Duration_Minutes': 3}
+2026-01-30 08:52:02,182 - INFO - Extracted 10 digital downloads
+2026-01-30 08:52:02,183 - INFO - Extracting room bookings...
+2026-01-30 08:52:02,185 - INFO - NULL values in room bookings: {'BookingID': 0, 'RoomNumber': 0, 'BookingDate': 0, 'TimeSlot': 0, 'StudentID': 3, 'DurationHours': 0, 'Purpose': 0}
+2026-01-30 08:52:02,195 - INFO - Extracted 10 room bookings
+2026-01-30 08:52:02,196 - INFO - 
+--- TRANSFORMATION PHASE (with NULL Handling) ---
+2026-01-30 08:52:02,196 - INFO - Removing duplicates from staging_book_transactions...
+2026-01-30 08:52:02,201 - INFO - Removed 10 duplicate records from staging_book_transactions
+2026-01-30 08:52:02,201 - INFO - Removing duplicates from staging_room_bookings...
+2026-01-30 08:52:02,204 - INFO - Removed 10 duplicate records from staging_room_bookings
+2026-01-30 08:52:02,204 - INFO - Starting data transformation with NULL handling...
+2026-01-30 08:52:02,256 - INFO - Data transformation completed
+2026-01-30 08:52:02,257 - INFO - NULL Handling Summary:
+2026-01-30 08:52:02,257 - INFO -   - Flagged: 7
+2026-01-30 08:52:02,257 - INFO -   - Imputed: 3
+2026-01-30 08:52:02,257 - INFO -   - Kept NULL: 0
+2026-01-30 08:52:02,258 - INFO - 
+--- LOADING PHASE ---
+2026-01-30 08:52:02,258 - INFO - Populating date dimension...
+2026-01-30 08:52:02,864 - INFO - Date dimension populated
+2026-01-30 08:52:02,864 - INFO - Loading student dimension...
+2026-01-30 08:52:02,880 - INFO - Loaded 0 students into dimension table
+2026-01-30 08:52:02,881 - INFO - Loading resource dimension...
+2026-01-30 08:52:02,891 - INFO - Loaded 13 resources into dimension table
+2026-01-30 08:52:02,892 - INFO - Loading location dimension...
+2026-01-30 08:52:02,899 - INFO - Loaded 0 locations into dimension table
+2026-01-30 08:52:02,899 - INFO - Loading fact table...
+2026-01-30 08:52:02,922 - INFO - Loaded 8 book checkout facts
+2026-01-30 08:52:02,932 - INFO - Loaded 4 room booking facts
+2026-01-30 08:52:02,932 - INFO - 
+--- GENERATING REPORT ---
+2026-01-30 08:52:02,933 - INFO - Data Quality Report: {'total_issues': 17, 'issues_by_type': {'NULL Handling - Flagging': 7, 'Department Standardization': 7, 'NULL Handling - Imputation': 3}, 'null_handling': {'flagged': 7, 'imputed': 3, 'kept_null': 0}, 'timestamp': datetime.datetime(2026, 1, 30, 8, 52, 2, 933118)}
+2026-01-30 08:52:02,935 - INFO - ================================================================================
+2026-01-30 08:52:02,935 - INFO - ETL Process Completed Successfully!
+2026-01-30 08:52:02,936 - INFO - ================================================================================
+2026-02-02 11:19:25,068 - INFO - ================================================================================
+2026-02-02 11:19:25,069 - INFO - Starting Full ETL Process (with NULL Handling)
+2026-02-02 11:19:25,070 - INFO - ================================================================================
+2026-02-02 11:19:25,173 - INFO - Database connections established successfully
+2026-02-02 11:19:25,174 - INFO - 
+--- EXTRACTION PHASE ---
+2026-02-02 11:19:25,174 - INFO - Extracting book transactions...
+2026-02-02 11:19:25,203 - INFO - NULL values in source data: {'TransactionID': 0, 'StudentID': 0, 'BookISBN': 0, 'CheckoutDate': 0, 'ReturnDate': 4, 'Department': 0, 'BookCategory': 0}
+2026-02-02 11:19:25,292 - INFO - Extracted 12 book transactions
+2026-02-02 11:19:25,293 - INFO - Extracting digital downloads...
+2026-02-02 11:19:27,741 - INFO - NULL values in digital downloads: {'Date': 0, 'UserType': 0, 'ResourceType': 0, 'Faculty': 0, 'DownloadCount': 0, 'Duration_Minutes': 3}
+2026-02-02 11:19:27,752 - INFO - Extracted 10 digital downloads
+2026-02-02 11:19:27,752 - INFO - Extracting room bookings...
+2026-02-02 11:19:27,756 - INFO - NULL values in room bookings: {'BookingID': 0, 'RoomNumber': 0, 'BookingDate': 0, 'TimeSlot': 0, 'StudentID': 3, 'DurationHours': 0, 'Purpose': 0}
+2026-02-02 11:19:27,774 - INFO - Extracted 10 room bookings
+2026-02-02 11:19:27,774 - INFO - 
+--- TRANSFORMATION PHASE (with NULL Handling) ---
+2026-02-02 11:19:27,775 - INFO - Removing duplicates from staging_book_transactions...
+2026-02-02 11:19:27,782 - INFO - Removed 10 duplicate records from staging_book_transactions
+2026-02-02 11:19:27,782 - INFO - Removing duplicates from staging_room_bookings...
+2026-02-02 11:19:27,787 - INFO - Removed 10 duplicate records from staging_room_bookings
+2026-02-02 11:19:27,787 - INFO - Starting data transformation with NULL handling...
+2026-02-02 11:19:27,885 - INFO - Data transformation completed
+2026-02-02 11:19:27,886 - INFO - NULL Handling Summary:
+2026-02-02 11:19:27,886 - INFO -   - Flagged: 7
+2026-02-02 11:19:27,886 - INFO -   - Imputed: 3
+2026-02-02 11:19:27,887 - INFO -   - Kept NULL: 0
+2026-02-02 11:19:27,887 - INFO - 
+--- LOADING PHASE ---
+2026-02-02 11:19:27,887 - INFO - Populating date dimension...
+2026-02-02 11:19:29,124 - INFO - Date dimension populated
+2026-02-02 11:19:29,124 - INFO - Loading student dimension...
+2026-02-02 11:19:29,148 - INFO - Loaded 2 students into dimension table
+2026-02-02 11:19:29,149 - INFO - Loading resource dimension...
+2026-02-02 11:19:29,173 - INFO - Loaded 17 resources into dimension table
+2026-02-02 11:19:29,173 - INFO - Loading location dimension...
+2026-02-02 11:19:29,192 - INFO - Loaded 0 locations into dimension table
+2026-02-02 11:19:29,195 - INFO - Loading fact table...
+2026-02-02 11:19:29,249 - INFO - Loaded 10 book checkout facts
+2026-02-02 11:19:29,267 - INFO - Loaded 4 room booking facts
+2026-02-02 11:19:29,267 - INFO - 
+--- GENERATING REPORT ---
+2026-02-02 11:19:29,268 - INFO - Data Quality Report: {'total_issues': 16, 'issues_by_type': {'NULL Handling - Flagging': 7, 'Department Standardization': 6, 'NULL Handling - Imputation': 3}, 'null_handling': {'flagged': 9, 'imputed': 3, 'kept_null': 0}, 'timestamp': datetime.datetime(2026, 2, 2, 11, 19, 29, 268438)}
+2026-02-02 11:19:29,271 - INFO - ================================================================================
+2026-02-02 11:19:29,275 - INFO - ETL Process Completed Successfully!
+2026-02-02 11:19:29,276 - INFO - ================================================================================

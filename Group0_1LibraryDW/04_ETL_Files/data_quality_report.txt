@@ -1,0 +1,25 @@
+================================================================================
+DATA QUALITY REPORT (with NULL Handling)
+================================================================================
+
+Report Generated: 2026-02-02 11:19:29.268438
+Total Issues Found: 16
+
+NULL HANDLING STATISTICS:
+  - Values Flagged: 9
+  - Values Imputed: 3
+  - Values Kept NULL: 0
+
+Issues by Type:
+  - Department Standardization: 6
+  - NULL Handling - Flagging: 7
+  - NULL Handling - Imputation: 3
+
+================================================================================
+NULL HANDLING STRATEGIES APPLIED:
+================================================================================
+1. ReturnDate = NULL → FLAGGED as 'Book not returned'
+2. Duration_Minutes = NULL → IMPUTED with average by resource type
+3. StudentID = NULL (room bookings) → FLAGGED as 'Walk-in'
+4. Department = NULL → IMPUTED from other records OR flagged as 'Unknown'
+5. CheckoutDuration = NULL → CALCULATED if return date exists
